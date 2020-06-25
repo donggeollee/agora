@@ -41,11 +41,11 @@
 <!-- 			<frame-options policy="SAMEORIGIN" /> -->
 <!-- 		</headers> -->
 		<intercept-url pattern="/*"						    access="permitAll"/>
+		<intercept-url pattern="/home.jsp"					access="hasRole('ROLE_ADMINISTRATOR')"/>
 		<intercept-url pattern="/display/**"				access="permitAll"/>
 		<intercept-url pattern="/accounts/**"				access="permitAll"/>
 		<intercept-url pattern="/post/**"				    access="permitAll"/>
 		<intercept-url pattern="/reply/**"					access="permitAll"/>
-		
 		<intercept-url pattern="/secure/studio/**" 			access="hasRole('ROLE_ADMINISTRATOR') or hasRole('ROLE_SYSTEM') or hasRole('ROLE_DEVELOPER') or hasRole('ROLE_OPERATOR')" />
 		<!-- <intercept-url pattern="/secure/display/**" 	access="hasRole('ROLE_ADMINISTRATOR') and hasIpAddress('192.168.1.0/24')" />-->
 		<intercept-url pattern="/secure/data/**" 			access="hasRole('ROLE_USER') or hasRole('ROLE_SYSTEM')" /> 
