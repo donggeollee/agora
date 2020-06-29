@@ -17,12 +17,13 @@
 		<param name="File" value="${default.webapp.root}/WEB-INF/log/server.log" />
 		<param name="Append" value="true" />
 		<param name="Threshold" value="TRACE" />
+		<param name="encoding" value="euc-kr" />
 		<!-- Rollover at midnight each day -->
 		<param name="DatePattern" value="'.'yyyy-MM-dd" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<!-- The default pattern: Date Priority [Category] Message\n -->
-			<param name="ConversionPattern" value="%d{yyyy.MM.dd HH:mm:ss} %-5p [%c{1}] %M - %m%n" />
-			<!-- The full pattern: Date MS Priority [Category] (Thread:NDC) Message\n 
+			<!-- The default pattern: Date Priority [Category] Message\n -->  
+			<param name="ConversionPattern" value="%d{yyyy.MM.dd HH:mm:ss} %-5p [%c{1}] %M - %m%n" /> 
+			<!-- The full pattern: Date MS Priority [Category] (Thread:NDC) Message\n  
 				<param name="ConversionPattern" value="%d %-5r %-5p [%c] %M (%t:%x) %m%n"/> -->
 		</layout>
 	</appender>
@@ -32,10 +33,10 @@
 	<!-- ============================== -->
 	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
 		<errorHandler class="org.apache.log4j.helpers.OnlyOnceErrorHandler" />
-		<param name="Target" value="System.out" />
+		<param name="Target" value="System.out" /> 
 		<param name="Threshold" value="TRACE" />
 		<layout class="org.apache.log4j.PatternLayout">
-			<param name="ConversionPattern" value="%d{yyyy.MM.dd HH:mm:ss} %-5p [%c{1}] - %m%n" />
+			<param name="ConversionPattern" value="%d{yyyy.MM.dd HH:mm:ss} %-5p [%C{10}] - %m%n" /> 
 		</layout>
 	</appender>
 

@@ -1,7 +1,9 @@
 package practice.agora.web.controller;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
-
+import java.util.stream.Stream;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,13 +23,15 @@ public class ControllerTest {
 	@RequestMapping(method = RequestMethod.GET, value = "/test")
 	public Object getMethod(String object) {
 		log.debug("실행완료");
-		
+		Stream<String> asdf = Arrays.stream(new String[] {"asdfasf","asdfsafd"});
 		return object;
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = "/test/{baby}")
 	public Object getTestFestival(@PathVariable String baby) {
 		log.debug("실행완료 : {}", baby);
+		
+		ArrayList<String> test = new ArrayList<String>();
 		
 		return baby;
 	}
